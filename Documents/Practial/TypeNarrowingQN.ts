@@ -4,12 +4,12 @@ type input = string|number|boolean|null|undefined
 function describe(value:input):string{
     if(typeof  value === "string"){
         return value
+    } else if(value === null){
+        return String(value)
     } else if(typeof value === "number"){
         return String(value)
-    } else if(typeof value === "undefined"){
-        return String(undefined)
-    } else{
-        return String(null)
+    } else {
+        return String(value)
     }
 }
 
@@ -20,9 +20,9 @@ type Animal = Dog | Cat;
 
 function makeSound(animal: Animal):string{
     if("bark" in animal){
-        return "bark"
+        return animal.bark()
     } else {
-        return "Meow"
+        return animal.meow()
     }
 }
 
@@ -39,7 +39,7 @@ const users: User[] = [
 ];
 
 const adminUsers = users.filter((user): user is AdminUser =>{
-    return (user as AdminUser).isAdmin
+    return "isAdmin" in user
 })
 console.log(adminUsers)
 
@@ -59,5 +59,6 @@ function handle(result: Result){
             return "something went wrong"
         default:
             const notPossible:never = result
+            return;
     }
 }
