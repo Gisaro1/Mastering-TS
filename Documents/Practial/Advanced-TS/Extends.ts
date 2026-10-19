@@ -1,12 +1,16 @@
-interface A{
+type A ={
     name:string
 }
-interface B extends A{
+type C ={
+    email:string
+}
+type B = A & C & {
     age:number
 }
 
 const b:B = {
     name:"billy",
-    age:12
+    age:12,
+    email:"gisaroblanks@gmail.com"
 }
 // so Extends word work the same way on Interface as it is on Classes!!
