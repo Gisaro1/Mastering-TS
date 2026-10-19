@@ -37,8 +37,8 @@ const users: User[] = [
     { name: "leah", sessionTTL: Infinity, isAdmin: true, access: "write-admin" },
     { name: "joe", sessionTTL: 5 }
 ];
-const standardUsers = users.filter((user): user is StandardUser =>{
-    return !(user as AdminUser).isAdmin
+const standardUsers = users.filter((user):user is StandardUser =>{
+    return !("isAdmin" in user)
 })
 
 
@@ -58,7 +58,7 @@ type Prospective = {
     type:"prospective"
 }
 
-type User2 = StandardUser2 | AdminUser2 |Prospective ;
+type User2 = StandardUser2 | AdminUser2 | Prospective  ;
 
 function login2(user:User2){
     switch(user.type){

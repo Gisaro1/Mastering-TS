@@ -1,0 +1,6 @@
+variable n as interger
+for n <-- 1 to p
+if(n % 5 == 0) then
+count <-- count + 1
+end if
+total <-- total + n
