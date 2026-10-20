@@ -8,6 +8,8 @@ type User = {
     city: string
   }
 }
+type T = Readonly<User>
+
 function createUserWithAddress(user:Required<User>){} //here we used a type named Required whic is used when we do want to make property not optional
 function createUser(user: Omit<User,"id">) {} // here we have the second UT which is Omit and it's the opposite of pick because it does recieve the two argument and Type and things to be removed
 function updateUser(user: Partial<User>) {} // here this allows a user to update the type by making every property optional
