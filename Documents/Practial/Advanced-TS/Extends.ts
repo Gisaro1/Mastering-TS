@@ -1,13 +1,17 @@
-interface Animal{
+interface APIresponse{
     name:string
-    color: string | null
+    age:string
+    gender:number
 }
 
-interface Dog extends Animal{
-    name:"max"
-    color:string
+interface User extends Omit<APIresponse,"age"|"gender">{
+    age:number
+    gender:string
 }
 
-interface Label extends Animal{
-    name:number
+const fetching = (data:APIresponse):User => {
+    return{...data,age:Number(data.age),gender:String(data.gender)}
 }
+
+const u = fetching({name:"Gisaro",age:"34",gender:347})
+console.log(u.age + 1)
