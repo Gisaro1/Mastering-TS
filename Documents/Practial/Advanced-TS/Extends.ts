@@ -1,17 +1,16 @@
-interface APIresponse{
+class Animal{
     name:string
-    age:string
-    gender:number
+    constructor(name:string){this.name = name}
+    speak():string{
+        return `${this.name} Makes good sound`
+    }
 }
 
-interface User extends Omit<APIresponse,"age"|"gender">{
-    age:number
-    gender:string
+class Dog extends Animal{
+    override speak(): string {
+        return `${this.name} woof!!`
+    }
 }
 
-const fetching = (data:APIresponse):User => {
-    return{...data,age:Number(data.age),gender:String(data.gender)}
-}
-
-const u = fetching({name:"Gisaro",age:"34",gender:347})
-console.log(u.age + 1)
+const animalArr:Animal[] = [new Animal("Genric"), new Dog("Puppy")]
+for(const p of animalArr) console.log(p.speak())
