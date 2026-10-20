@@ -1,0 +1,1 @@
+type result = true extends boolean ? 1 : 0
