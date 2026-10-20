@@ -1,16 +1,13 @@
-type A ={
+interface Animal{
     name:string
-}
-type C ={
-    email:string
-}
-type B = A & C & {
-    age:number
+    color: string | null
 }
 
-const b:B = {
-    name:"billy",
-    age:12,
-    email:"gisaroblanks@gmail.com"
+interface Dog extends Animal{
+    name:"max"
+    color:string
 }
-// so Extends word work the same way on Interface as it is on Classes!!
+
+interface Label extends Animal{
+    name:number
+}
