@@ -1,16 +1,11 @@
-class Animal{
-    name:string
-    constructor(name:string){this.name = name}
-    speak():string{
-        return `${this.name} Makes good sound`
-    }
+const checkLength = <T extends {length:number}>(a:T,b:T):T =>{
+    return a.length >= b.length ? a:b
 }
 
-class Dog extends Animal{
-    override speak(): string {
-        return `${this.name} woof!!`
-    }
-}
+console.log(checkLength("Gisaro","BillyMarru"))
 
-const animalArr:Animal[] = [new Animal("Genric"), new Dog("Puppy")]
-for(const p of animalArr) console.log(p.speak())
+type Custom<T> = T extends string ? "Yes": "No"
+const a:Custom<"Hey"> = "Yes"
+const b:Custom<12> = "No"
+
+console.log(a,b)
