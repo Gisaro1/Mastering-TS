@@ -22,7 +22,7 @@ function handlePayment(result: PaymentResult): string {
     return result.error.toUpperCase();
   }
 
-  return `${result.retryAfter}`;
+  return `${result.retryAfter}`
   
 }
 
