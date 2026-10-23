@@ -3,10 +3,15 @@ interface Config {
   port: number;
   timeout: number;
 }
-type PartialConfig = Pick<Config,"host"|"port">
-const a:Config = {
+const a:Pick<Config,"host" | "port"> = {
     host:"waguan",
     port:12,
-    timeout: 0
 }
 console.log(a)
+
+const b:Record<number,boolean> = {
+  12:true,
+  11:false,
+  13:true
+}
+// this is a string dictonary
