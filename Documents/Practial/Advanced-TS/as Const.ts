@@ -1,6 +1,9 @@
 const response = {
-    status:"success"
-} as const
+    status:"success",
+     address:{
+        city:12
+    } as const
+}
 
-function handleObj(status:"success" | "error"){}
-handleObj(response.status)
+// function handleObj(status:"success" | "error"){}
+// handleObj(response.status)

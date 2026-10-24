@@ -19,4 +19,4 @@ type Capital = `on${Capitalize<Str>}`
 
 type GettigId<T extends string> = T extends `User_${infer Id}` ? Id: never;
 
-type ExtractId = GettigId<"User_347">
+type ExtractId = GettigId<"User_true">
