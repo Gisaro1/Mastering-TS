@@ -29,13 +29,13 @@ function logPerson(person: Person) {
     );
 }
 
-type Age = Pick<Person,"age">
+type Age<T extends Person["type"]> = Partial<Omit<Extract<Person,{type:T}>,"type">>
 
-function filterPersons(persons: Person[], personType: string, criteria:Age): Person[] {
+function filterPersons(persons: Person[], personType: string, criteria: Age<Person["type"]>): Person[] {
     return persons
         .filter((person) => person.type === personType)
         .filter((person) => {
-            let criteriaKeys = Object.keys(criteria) as (keyof Age)[];
+            let criteriaKeys = Object.keys(criteria) as (keyof typeof criteria)[];
             return criteriaKeys.every((fieldName) => {
                 return person[fieldName] === criteria[fieldName];
             });
