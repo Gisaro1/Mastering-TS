@@ -33,3 +33,15 @@ type C = Record<B,A>
 // from what I have found from inline union we can even arrange them the way we want!!
 
 /* so in summary is like you want to create an Object and it's key will come from first argument passed in Record and their data type will be the second argument that you pass in Record utility type*/
+
+
+type a = {
+  name : string
+  age:number
+}
+
+type b = {
+  email:string
+}
+
+type User = Extract<a,b>
