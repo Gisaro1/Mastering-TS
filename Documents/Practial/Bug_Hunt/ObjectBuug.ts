@@ -19,6 +19,3 @@ const user: User = {
   email: "alice@example.com",
   isAdmin: false,
 };
-
-updateUser(user, "name", 123);
-updateUser(user, "role", "admin");
