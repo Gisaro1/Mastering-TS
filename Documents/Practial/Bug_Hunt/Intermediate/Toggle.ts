@@ -11,7 +11,7 @@ function toggleFlag<R extends keyof FeatureFlags>(
 ): FeatureFlags {
   return {
     ...flags,
-    [key]:flags[key],
+    [key]: !flags[key],
   };
 }
 
