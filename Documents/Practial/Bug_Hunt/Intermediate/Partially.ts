@@ -21,5 +21,5 @@ const settings: Settings = {
 };
 
 // These should be errors
-updateSettings(settings, "theme", "blue");
-updateSettings(settings, "fontSize", "14");
+updateSettings(settings, "theme", "light");
+updateSettings(settings, "fontSize", 14);
